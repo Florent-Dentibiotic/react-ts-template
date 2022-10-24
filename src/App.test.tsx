@@ -1,9 +1,10 @@
-import { describe, it } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import App from './App'
-import { render } from './utils/test-utils'
+import { render, screen } from './utils/test-utils'
 
 describe('Simple working test', () => {
   it('the title is visible', () => {
     render(<App />)
+    expect(screen.getByText('Vite + React')).toBeInTheDocument()
   })
 })
